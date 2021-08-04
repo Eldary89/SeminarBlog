@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if blogs %}
+    {% for blog in blogs %}
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.text }}</p>
+        <span>{{ blog.created }}</span>
+    {% endfor %}
+{% endif %}
+<br>
+<a href="{% url 'main:create_blog' %}" class="btn btn-primary">Create Blog</a>
+{% endblock %}
