@@ -4,7 +4,10 @@
     {% for blog in blogs %}
         <h3>{{ blog.title }}</h3>
         <p>{{ blog.text }}</p>
-        <span>{{ blog.created }}</span>
+        <span>Votes: {{blog.votes}}</span>
+        <span>Created: {{ blog.created }}</span>
+        <a href="{% url 'main:blog_up' blog.id %}" class="btn btn-primary">+</a>
+        <a href="{% url 'main:blog_down' blog.id %}" class="btn btn-primary">-</a>
     {% endfor %}
 {% endif %}
 <br>
