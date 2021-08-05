@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     index, get_blog_create, post_blog_create,
     blog_upvote, blog_downvote, register_view,
-    post_register, login_view
+    post_register, login_view, post_login, logout_view
 )
 
 app_name = 'main'
@@ -16,4 +16,6 @@ urlpatterns = [
     path("register/", register_view, name='register'),
     path("post_register/", post_register, name='post_register'),
     path("login/", login_view, name="login"),
+    path("post_login/", post_login, name="post_login"),
+    path("logout/", logout_view, name="logout"),
 ]
